@@ -8,3 +8,22 @@ function reverseString(input) {
 }
 
 console.log(reverseString("helo"));
+
+function isPalindrome(input) { 
+    const normalizedInput = input.toLowerCase();
+
+    let length = normalizedInput.length;
+
+    // Loop through the first half of the string
+    for (let i = 0; i < length / 2; i++) {
+        // Compare the character at the i-th position and the corresponding character from the end
+        if (normalizedInput[i] !== normalizedInput[length - 1 - i]) {
+            return false;  
+        }
+    }
+    return true; 
+}
+
+// Test cases
+console.log(isPalindrome("oio"));                  // Output: true
+console.log(isPalindrome("hello"));                // Output: false
